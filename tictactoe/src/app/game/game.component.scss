@@ -1,0 +1,21 @@
+[game-field] {
+  width: 300px;
+  height: 300px;
+}
+
+.row {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.sub-row {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  &.player-one {
+    background: red;
+  }
+  &.player-two {
+    background: green;
+  }
+}

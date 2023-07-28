@@ -1,0 +1,92 @@
+.todo {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background: lavender;
+  border: 1px solid #fff;
+  padding: 10px 15px;
+}
+
+.todo-status {
+  cursor: pointer;
+}
+
+.todo:hover .todo-remove {
+  opacity: 1;
+}
+
+.todo.completed {
+  background: gray;
+  text-decoration: line-through;
+}
+
+.todo.updated {
+  background: yellowgreen;
+}
+
+.todo-title {
+  flex: 1 1 auto;
+}
+
+.todo-update {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0 5px;
+
+  flex: 1 1 auto;
+}
+
+.todo-update.danger {
+  border: 1px solid red;
+}
+
+.todo-update input {
+  padding: 5px;
+  height: 30px;
+
+  flex: 1 1 auto;
+}
+
+.todo-update button {
+  padding: 3px;
+}
+
+.todo-update button svg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.todo-actions {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-remove {
+  opacity: 0;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+  .todo-remove {
+    opacity: 1;
+  }
+}
+
+.todo-remove svg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}

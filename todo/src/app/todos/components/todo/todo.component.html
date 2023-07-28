@@ -1,0 +1,47 @@
+<article class="todo" [ngClass]="setClassName()">
+  <div
+    class="todo-status"
+    *ngIf="!showUpdateInput"
+    (click)="handleID(todoProps.id, 'complete')"
+  >
+    <svg-icon
+      [src]="
+        todoProps.completed
+          ? 'assets/icons/checkmark.svg'
+          : 'assets/icons/stopwatch.svg'
+      "
+    ></svg-icon>
+  </div>
+  <h4
+    class="todo-title"
+    *ngIf="!showUpdateInput"
+    (click)="
+      todoProps.completed ? (showUpdateInput = false) : (showUpdateInput = true)
+    "
+  >
+    {{ todoProps.title }}
+  </h4>
+  <div
+    class="todo-update"
+    [ngClass]="{ danger: !todoProps.title }"
+    *ngIf="showUpdateInput"
+  >
+    <input
+      type="text"
+      [autofocus]="showUpdateInput"
+      [(ngModel)]="todoProps.title"
+      (keyup.enter)="checkToroTitle()"
+    />
+    <button (click)="checkToroTitle()">
+      <svg-icon src="assets/icons/checkbox.svg"></svg-icon>
+    </button>
+  </div>
+
+  <button
+    class="todo-remove"
+    *ngIf="!showUpdateInput"
+    (click)="handleID(todoProps.id, 'remove')"
+  >
+    <svg-icon src="assets/icons/close.svg"></svg-icon>
+  </button>
+</article>

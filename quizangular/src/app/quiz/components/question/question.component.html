@@ -1,0 +1,14 @@
+<div>
+  <div class="question">{{ (question$ | async)?.question }}</div>
+  <div class="answers">
+    <app-quiz-answer
+      *ngFor="let answer of answers$ | async; let i = index"
+      [answerText]="answer"
+      [index]="i"
+      [correctAnswer]="correctAnswer$ | async"
+      [currentAnswer]="currentAnswer$ | async"
+      class="answer"
+      (selectAnswer)="selectAnswer($event)"
+    ></app-quiz-answer>
+  </div>
+</div>

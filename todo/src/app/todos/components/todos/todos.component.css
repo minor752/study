@@ -1,0 +1,51 @@
+.todos {
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  width: min(768px, 100%);
+  background: tan;
+  display: grid;
+  gap: 10px;
+}
+
+.todos-header {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.todos-input {
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+
+  flex: 1 1 auto;
+}
+
+.todos-button {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+
+  color: #fff;
+  background: var(--bg-button);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.todos-button:disabled {
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+}
+
+.todos-items {
+  gap: 10px;
+  display: grid;
+}
+
+.todos-danger {
+  color: red;
+}

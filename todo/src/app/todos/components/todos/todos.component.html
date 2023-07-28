@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="todos">
+    <div class="todos-header">
+      <input
+        type="text"
+        class="todos-input"
+        name="todoTitle"
+        [(ngModel)]="todoTitle"
+        (input)="typeTitle()"
+        (keyup.enter)="addTodo()"
+      />
+      <button
+        class="todos-button"
+        [disabled]="disableButton"
+        (click)="addTodo()"
+      >
+        Добавить
+      </button>
+    </div>
+    <div class="todos-danger" *ngIf="showDanger">
+      Поля не может быть пустым!
+    </div>
+    <div class="todos-items" *ngIf="todos?.length > 0">
+      <app-todo
+        *ngFor="let todo of todos"
+        (handleID)="handleID($event)"
+        [todo]="todo"
+      ></app-todo>
+    </div>
+  </div>
+</div>

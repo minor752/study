@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 32,
+      "title": "casdcasdcasdcaas dasdcasd sad asd asd a",
+      "completed": false,
+      "updated": true
+    },
+    {
+      "id": 52,
+      "title": "casdcasdcasd",
+      "completed": false,
+      "updated": false
+    }
+  ]
+}

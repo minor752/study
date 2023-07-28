@@ -1,0 +1,42 @@
+<div>
+  <h1>Tic-Tac-Toe</h1>
+  <div>
+    <p class="current-status">Start the game on the button</p>
+  </div>
+
+  <div>
+    <button
+      mat-raised-button
+      (click)="startGame()"
+      *ngIf="gameLogic.gameStatus === 0"
+    >
+      Start game now
+    </button>
+  </div>
+
+  <div *ngIf="gameLogic.gameStatus === 1">
+    <div>Player 1</div>
+
+    <div game-field>
+      <div class="row">
+        <div (click)="clickSubfield($event)" position="0" class="sub-row"></div>
+        <div (click)="clickSubfield($event)" position="1" class="sub-row"></div>
+        <div (click)="clickSubfield($event)" position="2" class="sub-row"></div>
+      </div>
+
+      <div class="row">
+        <div (click)="clickSubfield($event)" position="3" class="sub-row"></div>
+        <div (click)="clickSubfield($event)" position="4" class="sub-row"></div>
+        <div (click)="clickSubfield($event)" position="5" class="sub-row"></div>
+      </div>
+
+      <div class="row">
+        <div (click)="clickSubfield($event)" position="6" class="sub-row"></div>
+        <div (click)="clickSubfield($event)" position="7" class="sub-row"></div>
+        <div (click)="clickSubfield($event)" position="8" class="sub-row"></div>
+      </div>
+    </div>
+
+    <div>Player 2</div>
+  </div>
+</div>
